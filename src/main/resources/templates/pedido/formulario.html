@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{base :: head}"></head>
+
+
+<body>
+    <header th:replace="~{base :: header}"></header>
+
+    <div class="container">
+        <div class="p-4 mb-0 bg-secondary rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-4 text-light">Novo Pedido </h1>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form th:object="${requisicaoNovoPedido}" action="/pedido/novo" method="post">
+                    <div class="mb-3">
+                        <label for="nomeProduto" class="form-label">Produto </label>
+                        <input th:field="*{nomeProduto}" th:errorclass="is-invalid" type="text" class="form-control"
+                            aria-describedby="nomeProduto" placeholder="Nome do Produto">
+                        <div id="nomeProduto" class="form-text">Informe qual o nome do produto!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urlProduto" class="form-label">Url </label>
+                        <input th:field="*{urlProduto}" th:errorclass="is-invalid" type="text" class="form-control"
+                            aria-describedby="urlProduto" placeholder="Url do Produto">
+                        <div id="urlProduto" class="form-text">Procure em um site um produto que deseja e cole a url
+                            aqui!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urlImagem" class="form-label">Imagem </label>
+                        <input th:field="*{urlImagem}" th:errorclass="is-invalid" type="text" class="form-control"
+                            aria-describedby="urlImagem" placeholder="Url da Imagem">
+                        <div id="urlImagem" class="form-text">Copie a url de uma boa imagem do produto e cole aqui para
+                            ajudar o comprador</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descricao">Descrição</label>
+                        <textarea th:field="*{descricao}" class="form-control"
+                            placeholder="Adicione detalhes importantes para ajudar o comprador."
+                            id="descricao"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
