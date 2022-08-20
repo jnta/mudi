@@ -36,6 +36,10 @@
 
 <header th:fragment="header">
     <div class="logo-container mb-3 p-4 d-flex justify-content-between mb-3">
-        <span class="logo"> <a href="/home">mudi</a> </span> <span class="login">login</span>
+        <span class="logo"> <a href="/home">mudi</a>
+
+        </span>
+        <span class="login"><a href="/login" class="text-light" sec:authorize="!isAuthenticated()"> Login </a>
+            <a href="/logout" class="text-light" sec:authorize="isAuthenticated()"> Logout </a> </span>
     </div>
 </header>

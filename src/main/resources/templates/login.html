@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head th:replace="~{base :: head}"></head>
+
+<body>
+    <header th:replace="~{base :: header}"></header>
+    <div class="container">
+        <div class="p-4 mb-0 bg-secondary rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-4 text-light">Login</h1>
+            </div>
+        </div>
+        <form class="card" th:action="@{/login}" method="post">
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="username" class="form-label"> Usuário: </label>
+                    <input class="form-control" type="text" name="username" id="username" />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label"> Senha: </label>
+                    <input class="form-control" type="password" name="password" id="password" />
+                </div>
+                <div><input class="btn btn-primary" type="submit" value="Login" /></div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
